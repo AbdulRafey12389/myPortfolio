@@ -25,14 +25,17 @@ const App = () => {
   const [totalScrollPercent, setTotalScrollPercent] = useState(0);
   const cursorRef = useRef(null);
   const loadingRef = useRef(null);
-  const [isLoaded, setIsLoaded] = useState(false);
+  const [isLoaded, setIsLoaded] = useState(true);
 
-  window.addEventListener('load', function () {
-    setTimeout(() => {
-      loadingRef.current.classList.add('loaded');
-      setIsLoaded(true);
-    }, 1000);
-  });
+  if (window.innerWidth >= 724) {
+    window.addEventListener('load', function () {
+      setIsLoaded(false);
+      setTimeout(() => {
+        loadingRef.current.classList.add('loaded');
+        setIsLoaded(true);
+      }, 1000);
+    });
+  }
 
   window.addEventListener('scroll', function () {
     const bodyHeight = document.body.scrollHeight;
