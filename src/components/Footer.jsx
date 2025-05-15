@@ -46,9 +46,9 @@ const socials = [
   },
 ];
 
-const Footer = () => {
+const Footer = ({ isLoaded }) => {
   return (
-    <footer className='section'>
+    <footer className={`section ${isLoaded ? 'block' : 'hidden'}`}>
       <div className='container pt-[16rem]  md:pt-[7rem] lg:pt-0 px-10 2xl:px-0 h-[77vh]  mx-auto'>
         <div className='lg:grid lg:grid-cols-2'>
           <div className='mb-10'>

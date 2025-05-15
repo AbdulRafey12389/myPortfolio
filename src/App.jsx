@@ -93,7 +93,7 @@ const App = () => {
   return (
     <ReactLenis root>
       <div
-        className='loading'
+        className='loading hidden md:block'
         ref={loadingRef}
       >
         <img
@@ -123,14 +123,14 @@ const App = () => {
         {totalScrollPercent}%
       </a>
       <Header />
-      <main className={`${isLoaded ? 'block' : 'hidden scr'}`}>
+      <main className={`${isLoaded ? 'block' : 'hidden'}`}>
         <Hero />
         <Work />
         <Skill />
         <About />
         <Contact />
       </main>
-      <Footer />
+      <Footer isLoaded={isLoaded} />
     </ReactLenis>
   );
 };
