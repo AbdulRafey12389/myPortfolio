@@ -51,7 +51,7 @@ body {
 \* ------------------------*/
 
 .headline-1 {
-  @apply text-[16.5vw] sm:text-[15.5vw] md:text-[14.5vw] lg:text-[10.5rem]  uppercase tracking-wide font-extrabold font-[inter-local];
+  @apply text-[13.5vw] sm:text-[15.5vw] md:text-[14.5vw] lg:text-[10.5rem]  uppercase tracking-wide font-extrabold font-[inter-local];
 }
 
 .headline-div h1 {

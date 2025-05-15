@@ -15,7 +15,6 @@ function Hero() {
 
   window.addEventListener('resize', () => {
     if (window.innerWidth >= 724) {
-
       setRotate({ resultX: 0, resultY: 0 });
       setIsMobile(window.innerWidth);
     } else {
@@ -51,7 +50,7 @@ function Hero() {
     >
       <div className='container px-10 2xl:px-0 h-[77vh]  mx-auto'>
         <div
-          className='h-full relative flex items-start justify-start w-full bg-zinc-800 rounded-xl backdrop-blur-lg'
+          className='h-full relative flex items-center justify-center sm:items-start sm:justify-start w-full bg-zinc-800 rounded-xl'
           style={{ perspective: '1000px' }}
           onMouseMove={isMobile <= 724 ? () => {} : handleMaouseMove}
           onMouseLeave={isMobile <= 724 ? () => {} : handleMaouseLeave}
@@ -75,7 +74,7 @@ function Hero() {
                   className='inset-0 absolute top-0 left-0 z-10'
                 ></a>
               </button>
-              <p className='text-zinc-400 mt-1 font-semibold text-[12px] w-[40ch] pl-1 sm:text-start text-center'>
+              <p className='text-zinc-400 mt-1 font-semibold text-[10px] sm:text-[12px] w-[40ch] pl-1 sm:text-start  text-center'>
                 Download my CV to explore my skills, experience, and journey as
                 a Full Stack Developer.
               </p>
