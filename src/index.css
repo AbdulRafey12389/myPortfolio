@@ -1,0 +1,241 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* ------------------------*\
+ * FONT
+\* ------------------------*/
+@font-face {
+  font-family: 'inter-local';
+  /* font-weight: 900; */
+  src: url('./assets/font/file.ttf') format('truetype');
+}
+
+/*-----------------------------------*\
+  #CUSTOM PROPERTY
+\*-----------------------------------*/
+:root {
+  --radical-red: hsl(346, 100%, 58%);
+}
+
+/* ------------------------*\
+ * BASE
+\* ------------------------*/
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  @apply bg-zinc-900 text-zinc-50;
+}
+
+/* ------------------------*\
+ * UTILITIES
+\* ------------------------*/
+.img-box {
+  @apply bg-zinc-700 overflow-hidden;
+}
+
+.img-cover {
+  @apply w-full h-full object-cover;
+}
+
+.tags {
+  @apply bg-zinc-50/10 px-2 py-[2px] rounded-full ring-inset ring-1 ring-zinc-50/5 text-zinc-300 text-[12px] transition-colors
+    hover:bg-zinc-50/20;
+}
+
+/* ------------------------*\
+ * TYPOGRAPHY
+\* ------------------------*/
+
+.headline-1 {
+  @apply text-[16.5vw] sm:text-[15.5vw] md:text-[14.5vw] lg:text-[10.5rem]  uppercase tracking-wide font-extrabold font-[inter-local];
+}
+
+.headline-div h1 {
+  @apply max-w-max;
+  /* background: -webkit-linear-gradient(0deg, #fafafa, #a1a1aa); */
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  /* background-image: url(https://images.unsplash.com/photo-1557672172-298e090bd0f1?q=80&w=1287&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D); */
+  background-image: url('./assets/images/font-back.jpg');
+  /* font-size: 6vw; */
+  /* font-family: 'Protest Strike', sans-serif; */
+  /* font-weight: 900; */
+  background-position: bottom;
+  background-size: cover;
+  background-clip: text;
+  /* -webkit-background-clip: text; */
+  /* -webkit-text-fill-color: transparent; */
+  /* position: relative; */
+  color: transparent;
+  /* left: -120%; */
+  line-height: 8rem;
+  font-weight: 900;
+}
+
+.logo-title,
+.headline-2 {
+  @apply max-w-max;
+  background: -webkit-linear-gradient(0deg, #fafafa, #a1a1aa);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.headline-2 {
+  @apply text-3xl lg:text-4xl lg:leading-tight font-semibold;
+}
+
+.title-1 {
+  @apply text-[22px] font-normal;
+}
+
+/* ------------------------*\
+ * COMPONENTS
+\* ------------------------*/
+
+/*-----------------------------------*\
+  #LOADING
+\*-----------------------------------*/
+.loading {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: #111111;
+  z-index: 40;
+  transform-origin: bottom;
+  transition: 0.35s cubic-bezier(0.51, 0.03, 0.64, 0.28);
+  transition-delay: 0.35s;
+}
+
+.loading.loaded {
+  transform: scaleY(0);
+  pointer-events: none;
+}
+
+.loading > * {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  transition: 0.35s ease;
+}
+
+.loading.loaded > * {
+  opacity: 0;
+}
+
+.loading .circle {
+  animation: rotate360 1s linear infinite;
+}
+
+@keyframes rotate360 {
+  0% {
+    transform: translate(-50%, -50%) rotate(0);
+  }
+  100% {
+    transform: translate(-50%, -50%) rotate(1turn);
+  }
+}
+
+.menu-btn {
+  @apply w-10 h-10 grid place-items-center bg-zinc-50/10 rounded-xl
+  ring-inset ring-1 ring-zinc-50/[0.02] backdrop-blur-2xl 
+  hover:bg-zinc-50/15 active:scale-95 transition-[trasform,background-color];
+}
+
+.navbar {
+  @apply absolute top-14 mt-2 right-10 min-w-40 p-2 bg-zinc-50/10 
+  rounded-2xl ring-inset ring-1 ring-zinc-50/5 scale-90 isolate 
+  blur-sm opacity-0 invisible transition-[transform,opacity,filter]
+  md:static md:flex md:items-center md:mt-0 md:opacity-100 md:blur-0
+  md:visible md:scale-100 backdrop-blur-2xl z-10;
+}
+
+.navbar.active {
+  @apply opacity-100 scale-100 blur-0 visible;
+}
+
+.nav-link {
+  @apply grid items-center h-9 px-4 text-sm font-medium tracking-wide
+  text-zinc-50/50 hover:text-zinc-50 transition-colors;
+}
+
+.nav-link.active {
+  @apply text-zinc-50 duration-500;
+}
+
+.navbar .active-box {
+  @apply absolute bg-pink-600 rounded-lg -z-10 transition-[top,left] duration-500;
+}
+
+/* BUTTON */
+.btn {
+  @apply max-w-max h-9 flex items-center gap-2 px-4 rounded-xl 
+  font-medium text-sm  ring-1 ring-zinc-50/5 ring-inset transition-[background-color];
+}
+
+.btn-secondary {
+  @apply bg-zinc-50 text-zinc-900 active:bg-zinc-50/80;
+}
+.btn-primary {
+  @apply h-11 bg-sky-400 text-zinc-50 
+  hover:bg-sky-300 active:bg-sky-400;
+}
+
+.btn-outline {
+  @apply h-11 bg-zinc-800 hover:bg-zinc-700 
+  active:bg-zinc-800;
+}
+
+/* BUTTON */
+.about-box {
+  @apply w-[80%] sm:w-full lg:w-[320px] mt-52 lg:h-[400px] 2xl:w-[400px] 2xl:h-[500px] flex flex-col items-start justify-start gap-1 px-4 py-6 rounded-xl 
+  ring-1 ring-zinc-50/15 hover:bg-zinc-50/5 ring-inset transition-[background-color];
+}
+
+/* TEXT FIELD */
+.label {
+  @apply block text-zinc-200 text-sm font-normal mb-2;
+}
+
+.text-field {
+  @apply block outline-none w-full px-3 py-3 text-sm bg-zinc-800 rounded-xl ring-1 ring-inset ring-transparent transition-shadow hover:ring-zinc-50/5 focus:ring-sky-400 focus:ring-2;
+}
+
+.text-field::placeholder {
+  @apply text-zinc-400;
+}
+
+/* CUSTOM CURSOR  */
+.cursor {
+  display: block;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 75px;
+  height: 75px;
+  background-color: #fff;
+  mix-blend-mode: exclusion;
+  border-radius: 50%;
+  transform: translate(-50%, -50%) scale(0.35);
+  transition: transform 500ms;
+  pointer-events: none;
+  z-index: 30;
+}
+
+.cursor.hovered {
+  transform: translate(-50%, -50%) scale(1.2);
+}
+
+.cursor.disabled {
+  transform: translate(-50%, -50%) scale(0);
+}
+
+.reveal-up {
+  @apply opacity-0 translate-y-32;
+}
