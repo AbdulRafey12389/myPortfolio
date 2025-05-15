@@ -88,8 +88,8 @@ const Work = () => {
       tags: ['TMDB', 'Apis'],
       description:
         'Built a Movie App using React.js and Tailwind CSS, integrated with the TMDB API to fetch and display real-time movie data. Implemented a powerful search and filter system for easy movie discovery by genre, rating, and popularity. Designed a responsive and user-friendly interface for smooth browsing across all devices',
-      projectLink: 'https://github.com/codewithsadee/vcard-personal-portfolio',
-      githubLink: 'https://movieflixbyrafey.netlify.app/',
+      projectLink: 'https://movieflixbyrafey.netlify.app/',
+      githubLink: 'https://github.com/AbdulRafey12389/My_movie_React_app',
       videoLink: 'https://www.youtube.com/watch?v=your_demo_id5',
     },
     {
