@@ -26,12 +26,12 @@ const App = () => {
   const cursorRef = useRef(null);
   const loadingRef = useRef(null);
 
+  document.body.style.overflow = 'hidden';
   window.addEventListener('load', function () {
-    document.body.style.overflow = 'hidden';
     setTimeout(() => {
       loadingRef.current.classList.add('loaded');
       document.body.style.overflow = 'auto';
-    }, 1500);
+    }, 500);
   });
 
   window.addEventListener('scroll', function () {
