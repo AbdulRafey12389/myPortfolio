@@ -11,6 +11,17 @@ import { logo, rLogo } from './assets/assets';
 function Hero() {
   const titleRef = useRef();
   const [rotate, setRotate] = useState({});
+  const [isMobile, setIsMobile] = useState(window.innerWidth);
+
+  window.addEventListener('resize', () => {
+    if (window.innerWidth >= 724) {
+
+      setRotate({ resultX: 0, resultY: 0 });
+      setIsMobile(window.innerWidth);
+    } else {
+      setIsMobile(window.innerWidth);
+    }
+  });
 
   const handleMaouseMove = (event) => {
     let { width, height, x, y } = titleRef.current.getBoundingClientRect();
@@ -42,8 +53,8 @@ function Hero() {
         <div
           className='h-full relative flex items-start justify-start w-full bg-zinc-800 rounded-xl backdrop-blur-lg'
           style={{ perspective: '1000px' }}
-          onMouseMove={handleMaouseMove}
-          onMouseLeave={handleMaouseLeave}
+          onMouseMove={isMobile <= 724 ? () => {} : handleMaouseMove}
+          onMouseLeave={isMobile <= 724 ? () => {} : handleMaouseLeave}
         >
           <div className='hoverable w-full max-h-max absolute z-10 rounded-xl top-0 grid place-items-end pt-8 pr-10'>
             <img

@@ -26,6 +26,16 @@ const WorkCard = ({
   const [descOpen, setDescOpen] = useState(false);
   const [videoOpen, setVideoOpen] = useState('image');
   const videoRotationRef = useRef(null);
+  const [isMobile, setIsMobile] = useState(window.innerWidth);
+  const cardRef = useRef(null);
+
+  window.addEventListener('resize', () => {
+    if (window.innerWidth >= 724) {
+      setIsMobile(window.innerWidth);
+    } else {
+      setIsMobile(window.innerWidth);
+    }
+  });
 
   const handleChangeVideo = useCallback(() => {
     if (videoOpen === 'video') {
@@ -75,9 +85,10 @@ const WorkCard = ({
   return (
     <div style={{ perspective: 2000 }}>
       <div
-        onMouseMove={handleMouseMove}
-        onMouseLeave={handleMouseLeave}
+        onMouseMove={isMobile <= 724 ? null : handleMouseMove}
+        onMouseLeave={isMobile <= 724 ? null : handleMouseLeave}
         className='relative reveal-up p-4 max-h-max overflow-hidden rounded-2xl bg-zinc-800 hover:bg-zinc-700/50 active:bg-zinc-700/60 ring-inset ring-zinc-50/5 transition-colors'
+        ref={cardRef}
       >
         <figure
           className=' img-box aspect-square rounded-lg mb-4 '

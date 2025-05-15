@@ -110,6 +110,7 @@ body {
   transform-origin: bottom;
   transition: 0.35s cubic-bezier(0.51, 0.03, 0.64, 0.28);
   transition-delay: 0.35s;
+  overflow: hidden;
 }
 
 .loading.loaded {
@@ -213,7 +214,6 @@ body {
 
 /* CUSTOM CURSOR  */
 .cursor {
-  display: block;
   position: fixed;
   top: 0;
   left: 0;

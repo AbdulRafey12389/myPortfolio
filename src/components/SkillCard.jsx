@@ -78,7 +78,7 @@ const SkillCard = ({ imgSrc, label, desc, imgBox, url }) => {
 
       <div
         ref={boxRef}
-        className='fixed w-[280px] h-[340px] rounded-lg bg-zinc-600'
+        className='fixed w-[280px] h-[340px] rounded-lg bg-zinc-600 hidden md:block'
       >
         <img
           src={imgBox}
@@ -89,7 +89,7 @@ const SkillCard = ({ imgSrc, label, desc, imgBox, url }) => {
       <div
         onMouseMove={handleMouseMove}
         onMouseLeave={handleMouseLeave}
-        className='absolute top-0 left-0 w-full opacity-0 h-full rounded-xl bg-zinc-500'
+        className='absolute top-0 left-0 w-full opacity-0 h-full rounded-xl bg-zinc-500 hidden md:block'
       ></div>
     </div>
   );

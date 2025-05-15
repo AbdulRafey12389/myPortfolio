@@ -25,13 +25,13 @@ const App = () => {
   const [totalScrollPercent, setTotalScrollPercent] = useState(0);
   const cursorRef = useRef(null);
   const loadingRef = useRef(null);
+  const [isLoaded, setIsLoaded] = useState(false);
 
-  document.body.style.overflow = 'hidden';
   window.addEventListener('load', function () {
     setTimeout(() => {
       loadingRef.current.classList.add('loaded');
-      document.body.style.overflow = 'auto';
-    }, 500);
+      setIsLoaded(true);
+    }, 1000);
   });
 
   window.addEventListener('scroll', function () {
@@ -93,7 +93,7 @@ const App = () => {
   return (
     <ReactLenis root>
       <div
-        class='loading'
+        className='loading'
         ref={loadingRef}
       >
         <img
@@ -101,19 +101,19 @@ const App = () => {
           width='55'
           height='55'
           alt='loading'
-          class='img'
+          className='img'
         />
         <img
           src={loadingCircle}
           width='70'
           height='70'
           alt='loading-circle'
-          class='circle'
+          className='circle'
         />
       </div>
       <div
         ref={cursorRef}
-        className='cursor'
+        className='cursor md:block hidden'
       ></div>
       <a
         href='#home'
@@ -123,7 +123,7 @@ const App = () => {
         {totalScrollPercent}%
       </a>
       <Header />
-      <main>
+      <main className={`${isLoaded ? 'block' : 'hidden scr'}`}>
         <Hero />
         <Work />
         <Skill />
