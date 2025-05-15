@@ -20,7 +20,6 @@
     "prop-types": "^15.8.1",
     "react": "^19.0.0",
     "react-dom": "^19.0.0",
-    "react-tilt": "^1.0.2",
     "react-tsparticles": "^2.12.2",
     "swiper": "^11.2.6",
     "TagCloud": "^2.5.0",
