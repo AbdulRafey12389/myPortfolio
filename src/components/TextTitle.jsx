@@ -2,7 +2,7 @@ const TextTitle = ({ titleRef }) => {
   return (
     <>
       <div
-        className='headline-div sm:pl-16 sm:pt-20 md:pt-16 2xl:pt-48 w-fit relative z-10'
+        className='headline-div sm:pl-16 sm:pt-20 md:pt-16 2xl:pt-32 w-fit relative z-10'
         ref={titleRef}
       >
         <h1 className='headline-1 '>

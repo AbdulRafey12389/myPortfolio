@@ -30,10 +30,8 @@ const App = () => {
   if (window.innerWidth >= 724) {
     window.addEventListener('load', function () {
       setIsLoaded(false);
-      setTimeout(() => {
-        loadingRef.current.classList.add('loaded');
-        setIsLoaded(true);
-      }, 1000);
+      loadingRef.current.classList.add('loaded');
+      setIsLoaded(true);
     });
   }
 
